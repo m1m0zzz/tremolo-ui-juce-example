@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import { InputNumber } from "antd";
 // @ts-expect-error Juce does not have types
-import * as Juce from "juce-framework-frontend";
+import * as Juce from "juce-framework-frontend-mirror";
 
 interface JuceTextboxProps {
   identifier: string;
