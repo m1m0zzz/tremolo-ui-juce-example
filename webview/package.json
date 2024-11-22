@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "antd": "^5.20.2",
-    "juce-framework-frontend-mirror": "^8.0.4",
+    "juce-framework-frontend-mirror": "^7.0.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
