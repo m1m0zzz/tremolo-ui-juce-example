@@ -12,7 +12,7 @@ TremoloJUCEExampleAudioProcessorEditor::TremoloJUCEExampleAudioProcessorEditor(
   //webComponent.goToURL(juce::WebBrowserComponent::getResourceProviderRoot());
   setResizable(true, true);
   setResizeLimits(180, 100, 1920, 1080);
-  setSize(400, 600);
+  setSize(170, 650);
 }
 
 TremoloJUCEExampleAudioProcessorEditor::~TremoloJUCEExampleAudioProcessorEditor() {}
