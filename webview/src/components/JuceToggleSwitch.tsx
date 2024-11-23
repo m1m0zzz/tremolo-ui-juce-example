@@ -1,7 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { Switch } from "antd";
-// @ts-expect-error Juce does not have types
-import * as Juce from "juce-framework-frontend-mirror";
+import { getToggleState } from "juce-framework-frontend-mirror";
 
 interface JuceToggleSwitchProps {
   identifier: string;
@@ -12,7 +11,7 @@ const JuceToggleSwitch: FC<JuceToggleSwitchProps> = ({
   identifier,
   inverted = false,
 }) => {
-  const toggleState = Juce.getToggleState(identifier);
+  const toggleState = getToggleState(identifier);
   const [value, setValue] = useState(toggleState.getValue());
 
   const changeJUCEParamValue = (newValue: boolean) => {

@@ -1,14 +1,13 @@
 import { FC, useEffect, useState } from "react";
 import { Select } from "antd";
-// @ts-expect-error Juce does not have types
-import * as Juce from "juce-framework-frontend-mirror";
+import { getComboBoxState } from "juce-framework-frontend-mirror";
 
 interface JuceComboboxProps {
   identifier: string;
 }
 
 const JuceCombobox: FC<JuceComboboxProps> = ({ identifier }) => {
-  const comboboxState = Juce.getComboBoxState(identifier);
+  const comboboxState = getComboBoxState(identifier);
   const [value, setValue] = useState<number>(comboboxState.getChoiceIndex());
 
   const changeJUCEParamValue = (newValue: number) => {

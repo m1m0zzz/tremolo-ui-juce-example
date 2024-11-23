@@ -1,7 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { Slider } from "antd";
-// @ts-expect-error Juce does not have types
-import * as Juce from "juce-framework-frontend-mirror";
+import { getSliderState } from "juce-framework-frontend-mirror";
 
 interface JuceSliderProps {
   identifier: string;
@@ -12,7 +11,7 @@ const JuceSlider: FC<JuceSliderProps> = ({
   identifier,
   isVertical = false,
 }) => {
-  const sliderState = Juce.getSliderState(identifier);
+  const sliderState = getSliderState(identifier);
   const [value, setValue] = useState<number>(sliderState.getNormalisedValue());
 
   const changeJUCEParamValue = (newNormalisedValue: number) => {

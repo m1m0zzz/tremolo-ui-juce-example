@@ -1,7 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { InputNumber } from "antd";
-// @ts-expect-error Juce does not have types
-import * as Juce from "juce-framework-frontend-mirror";
+import { getSliderState } from "juce-framework-frontend-mirror";
 
 interface JuceTextboxProps {
   identifier: string;
@@ -14,12 +13,12 @@ const JuceTextbox: FC<JuceTextboxProps> = ({
   digits = 2,
   suffix = "",
 }) => {
-  const sliderState = Juce.getSliderState(identifier);
+  const sliderState = getSliderState(identifier);
   const [value, setValue] = useState<string>(
     sliderState.getScaledValue().toFixed(digits)
   );
   const [tempValue, setTempValue] = useState<string>(
-    sliderState.getScaledValue()
+    String(sliderState.getScaledValue())
   );
   const [isFocused, setIsFocused] = useState(false);
 
