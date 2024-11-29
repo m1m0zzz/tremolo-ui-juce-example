@@ -1,43 +1,35 @@
-import { FC } from "react";
-import { Layout, Flex, Typography } from "antd";
-import JuceSlider from "./components/JuceSlider";
-import JuceTextbox from "./components/JuceTextbox";
-import JuceCombobox from "./components/JuceCombobox";
-import JuceToggleSwitch from "./components/JuceToggleSwitch";
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
-const App: FC = () => {
+function App() {
+  const [count, setCount] = useState(0)
+
   return (
-    <Layout>
-      <Layout.Content>
-        <Flex
-          vertical
-          gap="middle"
-          justify="space-between"
-          align="center"
-          style={{ padding: "16px", height: "100vh" }}
-        >
-          <Typography.Title
-            level={3}
-            style={{ margin: 0, textAlign: "center" }}
-          >
-            Pan
-          </Typography.Title>
-          <JuceSlider identifier="panAngle" />
-          <JuceTextbox identifier="panAngle" digits={0} />
-          <JuceCombobox identifier="panRule" />
-          <Typography.Title
-            level={3}
-            style={{ margin: 0, textAlign: "center" }}
-          >
-            Gain
-          </Typography.Title>
-          <JuceSlider identifier="gain" isVertical={true} />
-          <JuceTextbox identifier="gain" suffix="dB" />
-          <JuceToggleSwitch identifier="bypass" inverted={true} />
-        </Flex>
-      </Layout.Content>
-    </Layout>
-  );
-};
+    <>
+      <div>
+        <a href="https://vite.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.tsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
+  )
+}
 
-export default App;
+export default App
