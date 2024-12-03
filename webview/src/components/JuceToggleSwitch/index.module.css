@@ -1,0 +1,30 @@
+.button {
+  border-radius: 50%;
+  border: 1px solid transparent;
+  font-family: inherit;
+  padding: 8px;
+  cursor: pointer;
+  transition:
+    background-color 0.25s,
+    border-color 0.25s,
+    color 0.25s;
+}
+
+.button[data-value="true"] {
+  color: white;
+  background-color: #4e76e6;
+}
+
+.button[data-value="false"] {
+  color: black;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-color: #888;
+}
+
+.button[data-value="false"]:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.button:hover {
+  border-color: #646cff;
+}
