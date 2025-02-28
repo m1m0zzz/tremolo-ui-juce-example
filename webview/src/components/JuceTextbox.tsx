@@ -48,7 +48,7 @@ export function JuceTextbox({
     <InputNumber
       suffix={suffix}
       style={{ width: "100%" }}
-      id={"input"}
+      id="input-number"
       controls={false}
       value={isFocused ? parseFloat(tempValue) : parseFloat(value)}
       onChange={(v) => {

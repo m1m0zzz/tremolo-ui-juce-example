@@ -38,3 +38,7 @@ h1 {
 #root {
   height: 100%;
 }
+
+#input-number {
+  text-align: center;
+}

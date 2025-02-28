@@ -27,8 +27,8 @@ function App() {
         <JuceKnob identifier="panAngle" />
         <JuceTextbox identifier="panAngle" digits={0} />
         <JuceCombobox identifier="panRule" />
-        <h1>Gain</h1>
-        <JuceSlider identifier="gain" isVertical={true} />
+        <h1 style={{ marginTop: '0.5rem' }}>Gain</h1>
+        <JuceSlider identifier="gain" />
         <JuceTextbox identifier="gain" suffix="dB" />
       </main>
     </div>

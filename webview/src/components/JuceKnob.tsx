@@ -38,8 +38,7 @@ export function JuceKnob({
       value={value}
       onChange={handleChange}
       startValue={0.5}
-      enableWheel={['normalized', 0.1]}
-      style={{display: 'block', width: '100%'}}
+      wheel={['normalized', 0.1]}
     />
   );
 };

@@ -2,6 +2,8 @@
   width: 100%;
   height: 100%;
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .power_button {
@@ -31,8 +33,11 @@
 .main {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   gap: 0.6rem;
   height: 100%;
+  max-width: 180px;
   padding-top: 4rem;
   padding-right: 1rem;
   padding-left: 1rem;
