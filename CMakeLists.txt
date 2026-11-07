@@ -7,7 +7,7 @@ add_subdirectory(lib/JUCE)
 
 juce_add_plugin(TremoloJUCEExample
     COMPANY_NAME "mimoz"
-    PLUGIN_MANUFACTURER_CODE Mimz
+    PLUGIN_MANUFACTURER_CODE Mimo
     PLUGIN_CODE Trjx
     IS_SYNTH FALSE
     FORMATS VST3 Standalone
