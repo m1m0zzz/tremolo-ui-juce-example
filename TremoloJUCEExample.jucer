@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="BwNWdH" name="TremoloJUCEExample" projectType="audioplug"
-              useAppConfig="0" addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
+              useAppConfig="0" addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1"
+              pluginManufacturerCode="Mimo" pluginCode="Trjx">
   <MAINGROUP id="MLEkKo" name="TremoloJUCEExample">
     <GROUP id="{82B0CC64-6482-B3BA-9808-6A1AA427F9A4}" name="Source">
       <FILE id="vhV1Vi" name="PluginProcessor.cpp" compile="1" resource="0"
