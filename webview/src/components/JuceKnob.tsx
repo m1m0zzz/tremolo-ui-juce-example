@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Knob } from "@tremolo-ui/react";
 import { getSliderState } from "juce-framework-frontend-mirror";
 
+import knobTheme from "../theme/Knob.module.css";
+
 interface Props {
   identifier: string;
 }
@@ -31,7 +33,9 @@ export function JuceKnob({
   }, [sliderState]);
 
   return (
-    <Knob
+    <Knob.Root
+      className={knobTheme.root}
+      aria-label={identifier}
       min={0}
       max={1}
       step={0.001}
@@ -39,6 +43,16 @@ export function JuceKnob({
       onChange={handleChange}
       startValue={0.5}
       wheel={['normalized', 0.1]}
-    />
+      keyboard={['normalized', 0.01]}
+    >
+      <Knob.SVGRoot>
+        <Knob.ActiveLine className={knobTheme.activeLine} />
+        <Knob.InactiveLine className={knobTheme.inactiveLine} />
+        <Knob.Thumb
+          className={knobTheme.thumb}
+          classes={{ line: knobTheme.thumbLine }}
+        />
+      </Knob.SVGRoot>
+    </Knob.Root>
   );
 };

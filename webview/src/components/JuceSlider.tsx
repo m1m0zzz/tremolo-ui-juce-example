@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
-import { Slider, SliderTrack } from "@tremolo-ui/react";
+import { Slider } from "@tremolo-ui/react";
 import { getSliderState } from "juce-framework-frontend-mirror";
+
+import sliderTheme from "../theme/Slider.module.css";
 
 interface Props {
   identifier: string;
@@ -32,17 +34,24 @@ export function JuceSlider({
   }, [sliderState]);
 
   return (
-    <Slider
+    <Slider.Root
+      className={sliderTheme.root}
       min={0}
       max={1}
       step={0.001}
       value={value}
       onChange={handleChange}
-      vertical={vertical}
+      orientation={vertical ? 'vertical' : 'horizontal'}
       wheel={['normalized', 0.1]}
+      keyboard={['normalized', 0.01]}
       style={{ flex: '1 1 auto' }}
     >
-      <SliderTrack style={{ height: '100%' }} />
-    </Slider>
+      <Slider.Track
+        className={sliderTheme.track}
+        style={vertical ? { '--length': '100%' } : undefined}
+      >
+        <Slider.Thumb className={sliderTheme.thumb} aria-label={identifier} />
+      </Slider.Track>
+    </Slider.Root>
   );
 };
